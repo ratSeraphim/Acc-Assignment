@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:wght@300;500;700&display=swap');
+
+*{
+    font-family: 'Sofia Sans Semi Condensed', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    transition: all .3s ease-out;
+}
+
+header{
+    background-image: url('../assets/night-sky.png');
+    padding: 2rem;
+    color: white;
+    text-align: center;
+}
+
