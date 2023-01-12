@@ -9,6 +9,38 @@
     --black: #444;
 }
 
+/* using the reset CSS to get rid of all stylization */
+
+/* Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+    all: unset;
+    display: revert;
+  }
+
+  
+  /*
+    Remove list styles (bullets/numbers)
+    in case you use it with normalize.css
+  */
+  ol, ul {
+    list-style: none;
+  }
+  
+  /* For images to not be able to exceed their container */
+  img {
+    max-width: 100%;
+  }
+  
+  /* Removes spacing between cells in tables */
+  table {
+    border-collapse: collapse;
+  }
+  
+  /* Revert the 'white-space' property for textarea elements on Safari */
+  textarea {
+    white-space: revert;
+  }
+
 /* everything on the site will have these properties: chosen font, all text decorations removed
 (unless I choose to add a decoration to that specific object), scrolling via link will be done slowly */
 *{
@@ -17,9 +49,9 @@
     padding: 0;
     box-sizing: border-box;
     outline: none;
-    text-decoration: none;
     scroll-behavior: smooth;
 }
+
 
 /* when text is selected, it will adhere to the following properties (makes the design look more unified!)*/
 *::selection{
@@ -77,5 +109,10 @@ navbar > a:hover{
 }
 
 main{
-    margin-top: 100px;
+    background-color: var(--bg);
+}
+
+footer{
+    background: var(--black);
+    color: white;
 }
