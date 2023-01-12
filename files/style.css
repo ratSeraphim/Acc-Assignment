@@ -43,6 +43,8 @@
     white-space: revert;
   }
 
+
+
 /* everything on the site will have these properties: chosen font, all text decorations removed
 (unless I choose to add a decoration to that specific object), scrolling via link will be done slowly */
 *{
@@ -76,13 +78,20 @@ html::-webkit-scrollbar-thumb{
     background: var(--light-color)
 }
 
+/* All links, when hovered over, will turn this light green colour */
 a:hover{
     color: var(--light-color);
 }
 
+/* All the text should be my defined not-quite-black, if the content doesn't cover the screen (for example, because I don't have enough content), the background will just be my selected green. */
 html{
     color: var(--black);
     background: var(--main-color)
+}
+
+span{
+    color: var(--main-color);
+    font-weight: bold;
 }
 /* gives us our hero image */
 header{
@@ -118,16 +127,20 @@ navbar > a:hover{
     background-color: var(--black);
 }
 
+/* I want all of the content in the main tag to be in a column, so I redefine it as a flex container*/
 main{
     display: flex;
     flex-direction: column;
     background-color: var(--bg);
     padding: 30px;
 }
+/* heading will be bigger than the rest of the text, as well as a different colour*/
 h1{
     font-size: 30px;
     color: var(--main-color)
 }
+
+/* aside section will only ever take up 25% of the screen, stays on the right side */
 aside{
     width: 25%;
     float: right;
