@@ -45,7 +45,7 @@ html::-webkit-scrollbar-thumb{
 /* gives us our hero image */
 header{
     background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,1)), url('../assets/night-sky.png');
-    padding: 2rem;
+    padding: 32px;
     color: var(--light-color);
     text-align: center;
 }
@@ -58,14 +58,14 @@ navbar{
     z-index: 1000;
     background: var(--main-color);
     margin: 0;
-    padding: 1rem 9%;
+    padding: 16px 9%;
     display: flex;
 }
 
 /* links inside of the navbar*/
 navbar > a{
     color: #fff;
-    margin-left: 2rem;
+    margin-left: 24px;
     padding: 12px;
     border-radius: 20px;
 }
@@ -74,4 +74,8 @@ navbar > a{
 navbar > a:hover{
     color: var(--light-color);
     background-color: var(--black);
+}
+
+main{
+    margin-top: 100px;
 }
