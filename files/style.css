@@ -1,5 +1,16 @@
+/* adds font to website */
 @import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:wght@300;500;700&display=swap');
 
+/* adding variables so I don't have to memorize hex codes and other formatting */
+:root{
+    --main-color: #4b8864;
+    --bg: #c6cdc6;
+    --light-color: #aae1c1;
+    --black: #444;
+}
+
+/* everything on the site will have these properties: chosen font, all text decorations removed
+(unless I choose to add a decoration to that specific object), scrolling via link will be done slowly */
 *{
     font-family: 'Sofia Sans Semi Condensed', sans-serif;
     margin: 0;
@@ -7,13 +18,60 @@
     box-sizing: border-box;
     outline: none;
     text-decoration: none;
-    transition: all .3s ease-out;
+    scroll-behavior: smooth;
 }
 
+/* when text is selected, it will adhere to the following properties (makes the design look more unified!)*/
+*::selection{
+    background: var(--main-color);
+    color: #fff;
+}
+
+/* changes our scrollbar's width */
+html::-webkit-scrollbar{
+    width: 20px;
+}
+
+/* make the background of the scrollbar "black" (our slightly lighter version of it, anyway) */
+html::-webkit-scrollbar-track{
+    background: var(--black);
+}
+
+/* makes the thumb of the scroll light green */
+html::-webkit-scrollbar-thumb{
+    background: var(--light-color)
+}
+
+/* gives us our hero image */
 header{
-    background-image: url('../assets/night-sky.png');
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,1)), url('../assets/night-sky.png');
     padding: 2rem;
-    color: white;
+    color: var(--light-color);
     text-align: center;
 }
 
+navbar{
+    /* the navbar will follow us when we scroll down for ease of access */
+    position: sticky;
+    top: 0px;
+    /* z-index makes sure our navbar is on top of everything else (like a layer) */
+    z-index: 1000;
+    background: var(--main-color);
+    margin: 0;
+    padding: 1rem 9%;
+    display: flex;
+}
+
+/* links inside of the navbar*/
+navbar > a{
+    color: #fff;
+    margin-left: 2rem;
+    padding: 12px;
+    border-radius: 20px;
+}
+
+/* when hovered over with mouse pointer, the links will change colour */
+navbar > a:hover{
+    color: var(--light-color);
+    background-color: var(--black);
+}
