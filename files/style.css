@@ -7,6 +7,8 @@
     --bg: #ededed;
     --light-color: #aae1c1;
     --black: #444;
+    --box-shadow: 0 6px 6px rgba(0,0,0,.1);
+    --border: 2px solid rgba(0,0,0,.1);
 }
 
 /* using the reset CSS to get rid of all stylization */
@@ -74,6 +76,14 @@ html::-webkit-scrollbar-thumb{
     background: var(--light-color)
 }
 
+a:hover{
+    color: var(--light-color);
+}
+
+html{
+    color: var(--black);
+    background: var(--main-color)
+}
 /* gives us our hero image */
 header{
     background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,1)), url('../assets/night-sky.png');
@@ -92,6 +102,7 @@ navbar{
     margin: 0;
     padding: 16px 9%;
     display: flex;
+    box-shadow: var(--box-shadow);
 }
 
 /* links inside of the navbar*/
@@ -102,15 +113,64 @@ navbar > a{
     border-radius: 20px;
 }
 
-/* when hovered over with mouse pointer, the links will change colour */
+/* when hovered over with mouse pointer, the link's background will change colour */
 navbar > a:hover{
-    color: var(--light-color);
     background-color: var(--black);
 }
 
 main{
+    display: flex;
+    flex-direction: column;
     background-color: var(--bg);
+    padding: 30px;
 }
+h1{
+    font-size: 30px;
+    color: var(--main-color)
+}
+aside{
+    width: 20%;
+    float: right;
+    padding: 20px;
+    margin: 30px;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+}
+
+/* I want both the article and the section to have similar formatting, so I define both of them here */
+article, section{
+    margin: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Unlike in articles, I want the content of sections to be centered*/
+section{
+    text-align: center;
+}
+
+/* Unordered list within unordered list should have a disc symbol */
+article ul ul li{
+    list-style-type: disc;
+    margin-left: 30px;
+}
+
+/* Ordered list within unordered list should be numbered */
+article ul ol li{ 
+    margin-left: 30px;
+    list-style: decimal;
+}
+
+button{
+    background-color: var(--main-color);
+    color: #fff;
+    border: var(--border);
+    padding: 10px;
+    border-radius: 10px;
+    width: 50%;
+}
+
 
 footer{
     background: var(--black);
@@ -129,6 +189,18 @@ footer .links a{
     margin: 24px;
 }
 
-footer .links a:hover{
-    color: var(--light-color);
+input{
+    border: var(--border);
+    border-radius: 10px;
+    padding: 5px;
+    width: 500px;
+    overflow: auto;
+}
+
+textarea{
+    text-align: justify;
+    border: var(--border);
+    border-radius: 10px;
+    resize: both;
+    overflow: auto;
 }
