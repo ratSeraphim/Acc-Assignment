@@ -3,62 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="files/style.css">
     <title>New project page</title>
 </head>
 <body>
-    <header style="background-image: url('assets/night-sky.png');">
-        <div style="text-align: center; color: white;">
-            <h1>Neat lil' HTML page</h1>
-            <p>An HTML page made for an assignment at Accenture</p>
-        </div>
+    <header>
+        <h1>Neat lil' HTML page</h1>
+        <p>A webpage made for an assignment at Accenture</p>
     </header>
     <navbar>
         <a href="#home">Home</a>
         <a href="about.html">About</a>
         <a href="contacts.html">Contacts</a>
     </navbar>
-    <aside style="float: right;">
-        <h1>Fun fact:</h1>
-        <p>A shrimp's heart is in its head. <br>
-            Shrimp make excellent pets for anyone interested in aquariums: <br>
-            They clean their surroundings and you can keep <br>
-            <b>10-25 small shrimps in a 5 gallon aquarium</b> <br>
-            because of the small amount of waste they produce.
-        </p>
-    </aside>
-    <main  id="home">
-        <article>
-            <h1>What are my hobbies and favourites?</h1>
-            <ul>
-                <li>Hobbies:</li>
+    <div id="row">
+        <aside>
+            <h1>Fun fact:</h1>
+            <p>A shrimp's heart is in its head.
+                Shrimp make excellent pets for anyone interested in aquariums:
+                They clean their surroundings and you can keep
+                <span>10-25 small shrimps in a 5 gallon aquarium</span>
+                because of the small amount of waste they produce.
+            </p>
+        </aside>
+        <main  id="home">
+        
+            <article>
+                <h1>What are my hobbies and favourites?</h1>
                 <ul>
-                    <li>Art</li>
-                    <li>Writing</li>
-                    <li>Videogames</li>
-                    <li>Music</li>
+                    <li>Hobbies:</li>
+                    <ul>
+                        <li>Art</li>
+                        <li>Writing</li>
+                        <li>Videogames</li>
+                        <li>Music</li>
+                    </ul>
+                    <li>Foods:</li>
+                    <ol>
+                        <li>Sushi</li>
+                        <li>Pizza</li>
+                        <li>Fruit salads</li>
+                    </ol>
+                    <li>Games:</li>
+                    <ol>
+                        <li>Rainworld</li>
+                        <li>Tetris</li>
+                        <li>Stardew valley</li>
+                    </ol>
                 </ul>
-                <li>Foods:</li>
-                <ol>
-                    <li>Sushi</li>
-                    <li>Pizza</li>
-                    <li>Fruit salads</li>
-                </ol>
-                <li>Games:</li>
-                <ol>
-                    <li>Rainworld</li>
-                    <li>Tetris</li>
-                    <li>Stardew valley</li>
-                </ol>
-            </ul>
-        </article>
-        <section>
-            <img src="assets/rat.gif">
-        </section>
-    </main>
+            </article>
+            <section>
+                <h1>You have been blessed by the rat</h1>
+                <img src="assets/rat.gif">
+            </section>
+        </main>
+    </div>
+    
 
-    <footer>Telma Laudobele &copy; 2023 <br>
-        <a href="https://www.accenture.com/lv-en">Accenture page</a>  <br>
-        <a href="https://www.w3schools.com/">Useful tutorials</a>
+    <footer>
+        <div class="links">
+            <a href="https://www.accenture.com/lv-en">Accenture page</a>
+            <a href="https://www.w3schools.com/">W3schools</a>
+            <a href="https://www.youtube.com/@KevinPowell">CSS youtube tutorials</a>
+            <a href="https://github.com/ratSeraphim">Github profile</a> 
+        </div>
+        Telma Laudobele &copy; 2023 
     </footer>
 </body>
 </html>

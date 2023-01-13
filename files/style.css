@@ -1,0 +1,263 @@
+/* adds font to website */
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:wght@300;500;700&display=swap');
+
+/* adding variables so I don't have to memorize hex codes and other formatting */
+:root{
+    --main-color: #4b8864;
+    --bg: #ededed;
+    --light-color: #aae1c1;
+    --black: #444;
+    --box-shadow: 0 6px 6px rgba(0,0,0,.1);
+    --border: 2px solid rgba(0,0,0,.1);
+}
+
+/* using the reset CSS to get rid of all stylization */
+
+/* Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+    all: unset;
+    display: revert;
+  }
+
+  
+  /*
+    Remove list styles (bullets/numbers)
+    in case you use it with normalize.css
+  */
+  ol, ul {
+    list-style: none;
+  }
+  
+  /* For images to not be able to exceed their container */
+  img {
+    max-width: 100%;
+  }
+  
+  /* Removes spacing between cells in tables */
+  table {
+    border-collapse: collapse;
+  }
+  
+  /* Revert the 'white-space' property for textarea elements on Safari */
+  textarea {
+    white-space: revert;
+  }
+
+
+
+/* everything on the site will have these properties: chosen font, all text decorations removed
+(unless I choose to add a decoration to that specific object), scrolling via link will be done slowly */
+*{
+    font-family: 'Sofia Sans Semi Condensed', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+
+/* when text is selected, it will adhere to the following properties (makes the design look more unified!)*/
+*::selection{
+    background: var(--main-color);
+    color: #fff;
+}
+
+/* changes our scrollbar's width */
+html::-webkit-scrollbar{
+    width: 20px;
+}
+
+/* make the background of the scrollbar "black" (our slightly lighter version of it, anyway) */
+html::-webkit-scrollbar-track{
+    background: var(--black);
+}
+
+/* makes the thumb of the scroll light green */
+html::-webkit-scrollbar-thumb{
+    background: var(--light-color)
+}
+
+/* All links, when hovered over, will turn this light green colour */
+a:hover{
+    color: var(--light-color);
+}
+
+/* All the text should be my defined not-quite-black, if the content doesn't cover the screen (for example, because I don't have enough content), the background will just be my selected green. */
+html{
+    color: var(--black);
+    background: var(--main-color);
+    height: 100%;
+}
+
+span{
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+body{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+/* gives us our hero image */
+header{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,1)), url('../assets/night-sky.png');
+    padding: 32px;
+    color: var(--light-color);
+    text-align: center;
+}
+
+navbar{
+    /* the navbar will follow us when we scroll down for ease of access */
+    position: sticky;
+    top: 0px;
+    /* z-index makes sure our navbar is on top of everything else (like a layer) */
+    z-index: 1000;
+    background: var(--main-color);
+    margin: 0;
+    padding: 16px 9%;
+    display: flex;
+    box-shadow: var(--box-shadow);
+}
+
+/* links inside of the navbar*/
+navbar > a{
+    color: #fff;
+    margin-left: 24px;
+    padding: 12px;
+    border-radius: 20px;
+}
+
+/* when hovered over with mouse pointer, the link's background will change colour */
+navbar > a:hover{
+    background-color: var(--black);
+}
+
+/* I want all of the content in the main tag to be in a column, so I redefine it as a flex container*/
+main{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg);
+    padding: 30px;
+}
+/* heading will be bigger than the rest of the text, as well as a different colour*/
+h1{
+    font-size: 30px;
+    color: var(--main-color)
+}
+
+/*inner box in order to put side-bar and articles side by side */
+#row{
+    display: flex;
+    flex-direction: row;
+}
+
+/* aside section will only ever take up 25% of the screen, stays on the right side */
+aside{
+    align-self: flex-start;
+    width: 25%;
+    padding: 20px;
+    margin: 30px;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+}
+
+/* I want both the article and the section to have similar formatting, so I define both of them here */
+article, section{
+    margin: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Unlike in articles, I want the content of sections to be centered*/
+section{
+    text-align: center;
+}
+
+/* Unordered list within unordered list should have a disc symbol */
+article ul ul li{
+    list-style-type: disc;
+    margin-left: 30px;
+}
+
+/* Ordered list within unordered list should be numbered */
+article ul ol li{ 
+    margin-left: 30px;
+    list-style: decimal;
+}
+
+button{
+    background-color: var(--main-color);
+    color: #fff;
+    border: var(--border);
+    padding: 10px;
+    border-radius: 10px;
+    width: 50%;
+}
+
+
+footer{
+    background: var(--black);
+    color: white;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    margin-top: auto;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+
+footer .links{
+    margin: 50px 0px 30px;
+}
+footer .links a{
+    margin: 24px;
+}
+
+#contactlist{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contactlist label{
+    margin: 10px;
+}
+
+
+input{
+    border: var(--border);
+    border-radius: 10px;
+    padding: 5px;
+    width: 500px;
+    overflow: auto;
+}
+
+textarea{
+    text-align: justify;
+    border: var(--border);
+    border-radius: 10px;
+    resize: both;
+    overflow: auto;
+}
+
+@media (max-width:650px) {
+    #row{
+        flex-direction: column;
+    }
+    input{
+        width: 40%;
+    }
+    aside{
+        width: inherit;
+    }
+    footer .links{
+        display: flex;
+        flex-direction: column;
+    }
+    #contactlist label{
+        margin: 2px;
+    }
+}
