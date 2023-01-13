@@ -86,12 +86,19 @@ a:hover{
 /* All the text should be my defined not-quite-black, if the content doesn't cover the screen (for example, because I don't have enough content), the background will just be my selected green. */
 html{
     color: var(--black);
-    background: var(--main-color)
+    background: var(--main-color);
+    height: 100%;
 }
 
 span{
     color: var(--main-color);
     font-weight: bold;
+}
+
+body{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 /* gives us our hero image */
 header{
@@ -140,10 +147,16 @@ h1{
     color: var(--main-color)
 }
 
+/*inner box in order to put side-bar and articles side by side */
+#row{
+    display: flex;
+    flex-direction: row;
+}
+
 /* aside section will only ever take up 25% of the screen, stays on the right side */
 aside{
+    align-self: flex-start;
     width: 25%;
-    float: right;
     padding: 20px;
     margin: 30px;
     background: #fff;
@@ -191,6 +204,7 @@ footer{
     text-align: center;
     width: 100%;
     display: flex;
+    margin-top: auto;
     flex-direction: column;
     padding-bottom: 10px;
 }
@@ -230,11 +244,13 @@ textarea{
 }
 
 @media (max-width:650px) {
+    #row{
+        flex-direction: column;
+    }
     input{
         width: 40%;
     }
     aside{
-        float:none;
         width: inherit;
     }
     footer .links{
